@@ -112,6 +112,8 @@ x = (0.1 + 0.2) + 0.3
 y = (0.1) + (0.2 +0.3)
 x == y
 
+# In this case the associative rule does not hold as it would in 'real' mathematics.
+
 print('%.20f' %x)
 
 print('%.20f' %y)
@@ -119,6 +121,8 @@ print('%.20f' %y)
 x = (0.5 + 0.25) + 0.125
 y = (0.5) + (0.25 + 0.125)
 x == y
+
+# When we use numbers which can be represented in binary then the associative rule does hold.
 
 # ***Are numbers commutative?***
 # e.g. a x b x c = b x a x c
@@ -183,7 +187,7 @@ def prime_factors(x):
     while x % 2 == 0:
         x = int( x / 2 )
         factors.append(2)
-    #Now, no even factors left, start at 3, try only odd factors
+    #At this point there are no remaining even factors. Let's start at 3, trying only odd factors
     for trial_factor in range( 3, high_limit, 2 ):
         while x  % trial_factor == 0:
             x = int( x/ trial_factor )
